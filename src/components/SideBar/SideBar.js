@@ -4,6 +4,7 @@ import Avatar from '../UI/Avatar/Avatar';
 import SearchField from './SearchField/SearchField';
 import { Title, Wrapper } from './sedeBar.styles';
 import ava from '../../images/defaultUser.png'
+import ProfileCard from './ProfoleCard/ProfoleCard';
 
 
 const SideBar = () => {
@@ -15,7 +16,15 @@ const SideBar = () => {
               <SearchField/>  
             </Title>
             <h2>Chats</h2>
-
+            <ProfileCard />
+            <ProfileCard />
+            <ProfileCard />
+            <ProfileCard />
+            <ProfileCard />
+            <ProfileCard />
+            <ProfileCard />
+            <ProfileCard />
+            <ProfileCard />
         
         </Wrapper>
   

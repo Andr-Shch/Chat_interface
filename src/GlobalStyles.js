@@ -13,10 +13,12 @@ export const GlobalStyle = createGlobalStyle`
     --fontBig: 1.5rem;
     --fontMed:1rem;
     --fontSmall:1rem;
+    
 }
 *{
     box-sizing: border-box;
-    font-family: 'Able', sans-serif;
+    font-family: 'Manrope', sans-serif;
+                                                
 }
 body{
   padding:0;
