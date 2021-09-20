@@ -1,11 +1,15 @@
 
 import React from 'react';
-import {  Wrapper } from './messageSide.styles';
-
+import Avatar from '../UI/Avatar/Avatar';
+import {  Title, Wrapper } from './messageSide.styles';
+import ava from '../../images/defaultUser.png'
 const MessageSide = () => {
     return (
         <Wrapper>
-           
+           <Title>
+               <Avatar ava={ava} />
+               <h2>User name</h2>
+           </Title>
         </Wrapper>
     );
 };
