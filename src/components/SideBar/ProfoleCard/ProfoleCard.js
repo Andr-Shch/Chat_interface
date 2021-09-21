@@ -1,16 +1,17 @@
 import React from 'react';
 import Avatar from '../../UI/Avatar/Avatar';
-import { Content, Date, NameMessage, Wrapper } from './profileCard.styles';
-import ava from '../../../images/defaultUser.png'
+import { Content, Wrapper } from './profileCard.styles';
 
-const ProfileCard = () => {
+
+
+const ProfileCard = ({userName, ava}) => {
     return (
         <Wrapper>
-            <Avatar ava={ava} />
+            <Avatar online={true} ava={ava} />
            
               <Content>  
                <div className='NameDate'>
-                  <span className='name'>Josephine</span>
+                  <span className='name'>{userName}</span>
 
                   <span className='date'>Sep 20 2021</span>  
                </div>

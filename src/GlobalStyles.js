@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     --greyBorder: 3px solid #ECECEC;
     --white:#FAFAFA;
     --lightGrey: #F5F5F5;
+    --greyMessage:#E0E0E0;
     --blueFont: #3995C2;
     --greyFont: #A5A5A5;
     --darkGrey: #3C4252;
