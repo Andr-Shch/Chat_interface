@@ -7,11 +7,12 @@ const SendArea = () => {
         <Wrapper>
           <Content>
          
-          <img src={paper_Plane} />
+          <img src={paper_Plane}  />
          
           <input 
            type='text' 
            placeholder='Type your message' 
+           
            />
          
           </Content>

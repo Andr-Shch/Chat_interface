@@ -2,14 +2,14 @@ import React from 'react';
 import Avatar from '../Avatar/Avatar';
 import { YourContent, YourWrapper } from './messages.styles';
 
-const YourMessage = () => {
+const YourMessage = ({ava, text, date}) => {
     return (
       <YourWrapper>
-          <Avatar  ava={"https://robohash.org/doloremaliquidblanditiis.png?size=50x50&set=set1"}/>
+          <Avatar  ava={ava}/>
          
         <YourContent>
-          <div className='yourText'>  qwd qwd wq qw qw d цй цйв йц цй цй цйвцйв ц цйвйцвйц</div>
-          <div className='yourDate'>13/12/12</div>
+          <div className='yourText'>{text}</div>
+          <div className='yourDate'>{date}</div>
         </YourContent>
 
       </YourWrapper>

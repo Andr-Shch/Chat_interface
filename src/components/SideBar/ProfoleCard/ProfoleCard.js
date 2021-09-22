@@ -4,7 +4,7 @@ import { Content, Wrapper } from './profileCard.styles';
 
 
 
-const ProfileCard = ({userName, ava}) => {
+const ProfileCard = ({userName, ava, lastMess}) => {
     return (
         <Wrapper>
             <Avatar online={true} ava={ava} />
@@ -18,7 +18,7 @@ const ProfileCard = ({userName, ava}) => {
                
                
                 
-                <div className='lastMessage'> fwef wefwe fwefddddd?</div>
+                <div className='lastMessage'>{lastMess.text}</div>
           
                </Content> 
               

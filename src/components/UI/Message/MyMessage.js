@@ -1,11 +1,11 @@
 import React from 'react';
 import { MyWrapper } from './messages.styles';
 
-const MyMessage = () => {
+const MyMessage = ({date, text}) => {
     return (
        <MyWrapper>
-           <div className="myText">mewdwqssages</div>
-           <div className='myDate'>18/52/28</div>
+           <div className="myText">{text}</div>
+           <div className='myDate'>{date}</div>
        </MyWrapper>
     );
 };
