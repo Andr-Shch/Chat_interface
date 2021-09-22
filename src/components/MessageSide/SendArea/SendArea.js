@@ -2,21 +2,25 @@ import React from 'react';
 import { Wrapper, Content } from './sendArea.styles';
 import paper_Plane from '../../../images/send_icon.png'
 
-const SendArea = () => {
+const SendArea = ({newMessage, setNewMessage, send}) => {
     return (
-        <Wrapper>
+     
+ <Wrapper>
           <Content>
          
-          <img src={paper_Plane}  />
+          <img src={paper_Plane}  onClick={send} />
          
           <input 
            type='text' 
            placeholder='Type your message' 
-           
+           value={newMessage}
+           onChange={e=> setNewMessage(e.target.value)}
            />
          
           </Content>
         </Wrapper>
+      
+      
     );
 };
 

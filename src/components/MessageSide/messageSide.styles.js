@@ -27,5 +27,9 @@ export const Dialog = styled.div`
  height: calc(100vh - 171px);
  display: flex;
  flex-direction: column;
-
+ 
+ overflow-y: scroll;
+ ::-webkit-scrollbar {
+  display: none;
+}
 `
