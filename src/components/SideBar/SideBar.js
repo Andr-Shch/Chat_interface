@@ -7,11 +7,11 @@ import ProfileCard from './ProfoleCard/ProfoleCard';
 import NoResults from '../UI/Noresults/NoResults';
 import { NavLink, Redirect } from 'react-router-dom';
 
-const SideBar = ({ JSDATA }) => {
+const SideBar = ({ jsDATA }) => {
     const [searchQuery, setSearchQuery] = useState('')
-   
+    console.log(jsDATA);
 
-    const userList = JSDATA.filter(val => {
+    const userList = jsDATA?.filter(val => {
         if (searchQuery === '') {
             return val
         } else if (val.fullName.toLowerCase().includes(searchQuery.toLocaleLowerCase())) {
@@ -20,9 +20,10 @@ const SideBar = ({ JSDATA }) => {
 
     }).map(el =>
         <NavLink key={el.id} to={'/' + el.id} style={{ textDecoration: 'none' }}>
-            <ProfileCard ava={el.avatar} userName={el.fullName} lastMess={el.message.slice(-1)[0]} />
+            <ProfileCard  ava={el.avatar} userName={el.fullName} lastMess={el.message.slice(-1)[0]} />
         </NavLink>)
-
+  
+  console.log(userList);
     return (
 
         <Wrapper >
@@ -33,7 +34,7 @@ const SideBar = ({ JSDATA }) => {
                     setSearchQuery={setSearchQuery} />
             </Title>
             <h2 >Chats</h2>
-            <Redirect to="/1" />
+            <Redirect to={"/1" }  />
             {userList.length === 0 ? <NoResults /> : userList}
 
         </Wrapper>

@@ -13,7 +13,7 @@ const ProfileCard = ({userName, ava, lastMess}) => {
                <div className='NameDate'>
                   <span className='name'>{userName}</span>
 
-                  <span className='date'>Sep 20 2021</span>  
+                  <span className='date'>{lastMess.date}</span>  
                </div>
                
                

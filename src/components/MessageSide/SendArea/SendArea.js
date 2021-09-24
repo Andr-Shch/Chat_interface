@@ -8,7 +8,7 @@ const SendArea = ({newMessage, setNewMessage, send}) => {
  <Wrapper>
           <Content>
          
-          <img src={paper_Plane}  onClick={send} />
+          <img src={paper_Plane}   onClick={()=>send(newMessage)} />
          
           <input 
            type='text' 
