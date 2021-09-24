@@ -9,8 +9,8 @@ import { NavLink, Redirect } from 'react-router-dom';
 
 const SideBar = ({ jsDATA }) => {
     const [searchQuery, setSearchQuery] = useState('')
-    console.log(jsDATA);
-
+   
+      
     const userList = jsDATA?.filter(val => {
         if (searchQuery === '') {
             return val
@@ -19,11 +19,11 @@ const SideBar = ({ jsDATA }) => {
         }
 
     }).map(el =>
-        <NavLink key={el.id} to={'/' + el.id} style={{ textDecoration: 'none' }}>
+        <NavLink key={el.id} to={'/' + el.id} style={{ textDecoration: 'none' , color: 'inherit'}}>
             <ProfileCard  ava={el.avatar} userName={el.fullName} lastMess={el.message.slice(-1)[0]} />
         </NavLink>)
   
-  console.log(userList);
+ 
     return (
 
         <Wrapper >

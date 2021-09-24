@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import paper_Plane from '../../../images/send_icon.png'
  
 
  export const Wrapper = styled.div`
@@ -28,8 +28,9 @@ import styled from "styled-components";
       opacity: 0.55;
       border-radius:50%;
       cursor: pointer;
+      
   }
- 
+  
  input{
     font-size: var(--fontMed);
     position: absolute;
@@ -44,5 +45,10 @@ import styled from "styled-components";
     :focus {
       outline: none;
     }
+
+    .btn{
+      border-radius: 50%;
+    }
 }
  `
+ 

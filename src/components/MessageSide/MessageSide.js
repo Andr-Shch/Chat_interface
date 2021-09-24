@@ -5,23 +5,21 @@ import SendArea from './SendArea/SendArea';
 import YourMessage from '../UI/Message/YourMessage';
 import MyMessage from '../UI/Message/MyMessage';
 import { useParams } from 'react-router';
-import { format } from 'date-fns';
+import { format, parseJSON } from 'date-fns';
 import { isPersistedState } from '../../helper';
 
 const MessageSide = ({ allData, setAllData }) => {
 
   const { userID } = useParams()
 
-  const [dialogData, setDialogData] = useState([])
+  // const [filtered, setDialogData] = useState([])
   const [newMessage, setNewMessage] = useState('')
   const dialogWindow = document.querySelector('.dialogWindow')
-  const profileIMG = dialogData.avatar
+ 
+  
+    let filtered = allData.filter(x => x.id == userID)[0]
+    const profileIMG = filtered.avatar
 
-  const dataFilter = (id) => {
-    let filtered = allData.filter(x => x.id == id)
-    setDialogData(filtered[0])
-
-  }
   
   // window.onload = function(){
   //   let sessionState = isPersistedState("state")
@@ -38,30 +36,27 @@ const MessageSide = ({ allData, setAllData }) => {
   }
  // ScrollToBottom()
 
-
+ 
   const send = (InputTex) => {     //function send new message
 
     if (InputTex === '') {         //prevent send empty message
       return false
     } else {
 
-      let curentTime = format(new Date(), 'HH:mm:ss  dd/MM/yyyy ')
-
+      let curentTime = JSON.stringify(new Date())          
       let newSend = {
-        text: newMessage,
+        text: InputTex,
         send: 'false',
         date: curentTime
       }
-      setDialogData({
-        dialogData,
-        ...dialogData.message.push(newSend)
-      })
-
-      setAllData(value => value.map(el => el.id === userID ? { ...el, message: [...dialogData] } : el)) //bloody hell
+       let a= filtered.message.push(newSend)
+       
+        
+      setAllData(value => value.map(el => el.id === userID ? { ...el, message: filtered.message.push(newSend) } : el)) //bloody hell
 
 
       ScrollToBottom()
-      console.log(dialogWindow.scrollHeight)
+     
       setNewMessage('')
       sessionStorage.setItem("state", JSON.stringify(allData))
       getJoke()
@@ -76,28 +71,26 @@ const MessageSide = ({ allData, setAllData }) => {
 
       if (response.ok) {
         let json = await response.json();
-        let curentTime = format(new Date(), 'HH:mm:ss  dd/MM/yyyy ')
-        console.log(json.value);
+        let curentTime = JSON.stringify(new Date()) 
+       
         let newResponse = {
           text: json.value,
           send: 'true',
           date: curentTime
         }
-        setDialogData({
-          dialogData,
-          ...dialogData.message.push(newResponse)
-        })
-        setAllData(value => value.map(el => el.id === userID ? { ...el, message: [...dialogData] } : el))
+       
+        let a= filtered.message.push(newResponse)
+      setAllData(value => value.map(el => el.id === userID ?  { ...el, message: filtered.message.push(newResponse) } : el))
         sessionStorage.setItem("state", JSON.stringify(allData))
       } else {
         alert("Ошибка HTTP: " + response.status);
       }
-    }, 1000);
+    }, 5000);
   }
 
-  useEffect(() => {
-    dataFilter(userID)
-  }, [userID, dialogData])
+  // useEffect(() => {
+  //   dataFilter(userID)
+  // }, [userID, filtered])
 
   
 
@@ -106,11 +99,11 @@ const MessageSide = ({ allData, setAllData }) => {
 
       <Title>
         <Avatar online={true} ava={profileIMG} />
-        <h2 >{dialogData.fullName}</h2>
+        <h2 >{filtered.fullName}</h2>
       </Title >
       <Dialog className='dialogWindow'>
 
-        {dialogData.message && dialogData.message.map((el, ind) => el.send == 'true'
+        {filtered.message && filtered.message.map((el, ind) => el.send == 'true'
           ? <YourMessage key={ind} ava={profileIMG} date={el.date} text={el.text} />
           : <MyMessage key={ind} date={el.date} text={el.text} />)}
 

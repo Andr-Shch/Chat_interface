@@ -1,3 +1,3 @@
 
-export const data = ['Oleg', 'User', 'Sergo', 'Demiral', 'Icardi']
+export const data = []
 

@@ -20,6 +20,7 @@ const ChatInterface = () => {
      return
    }
    }
+   
   return (
     <Wrapper>
 
