@@ -45,6 +45,7 @@ export const MyWrapper = styled.div`
   margin-right: 15px;
   transition: all 0.6s;
   animation: animateMess 0.5s;
+  max-width: 80%;
   
   @keyframes animateMess {
     from{

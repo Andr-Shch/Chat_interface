@@ -16,7 +16,7 @@ const ChatInterface = () => {
    let sessionState = isPersistedState("state")
    if (sessionState){
      setAllData(sessionState)
-    // setDialogData(sessionState)
+      
      return
    }
    }

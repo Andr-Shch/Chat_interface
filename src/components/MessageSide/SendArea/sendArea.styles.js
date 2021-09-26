@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import paper_Plane from '../../../images/send_icon.png'
+
  
 
  export const Wrapper = styled.div`
@@ -38,7 +38,7 @@ import paper_Plane from '../../../images/send_icon.png'
     margin: 8px 0;
     padding: 0 0 0 20px;
     border: 0;
-    width: 95%;
+    width: 90%;
     background: transparent;
     height: 40px;
     color: var( --greyFont);
