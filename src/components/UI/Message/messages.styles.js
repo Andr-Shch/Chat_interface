@@ -36,10 +36,6 @@ export const YourContent = styled.div`
   }
 `
 
-
-
-
-
 export const MyWrapper = styled.div`
   align-self: flex-end;
   margin-right: 15px;
@@ -57,7 +53,8 @@ export const MyWrapper = styled.div`
   }
   .myText{
     display: flex;
-    align-content: flex-end;
+   align-items: center;
+    justify-content: center;
     color: #434343;
     background: var(--greyMessage);
     min-height: 40px;
